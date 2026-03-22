@@ -67,7 +67,7 @@ userRouter.post("/signin",async function(req, res) {
         email: email
     });
 
-    if (!user){
+    if(!user){
         return res.status(403).json({
             message: "Incorrect Credentials"
         })
@@ -84,7 +84,7 @@ userRouter.post("/signin",async function(req, res) {
             token: token
         })
     }
-    else {
+    else{
         res.status(403).json({
             message: "Incorrect credentials"
         })

@@ -3,12 +3,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const { userRouter } = require("./routes/user");
+const { notesRouter } = require("./routes/notes");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 app.use("/user", userRouter);
+app.use("/notes", notesRouter);
 
 console.log(process.env.MONGO_URL);
 
